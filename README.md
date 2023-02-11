@@ -8,3 +8,9 @@ Praying for the best though, But it might be hard...
 2. [vscode](https://code.visualstudio.com/)
 3. [HerokuAccount](https://heroku.com)
 4. [Gitcli](https://)
+
+Creata a new environment for the project
+
+'''
+conda create -p venv 
+'''
