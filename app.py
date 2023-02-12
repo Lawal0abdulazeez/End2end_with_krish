@@ -1,19 +1,20 @@
 import pickle
-from flask import Flask,request,app,jsonify,url_for, render_template
-import numpy
-import pandas
+from flask import Flask, request, jsonify, render_template
+import numpy as np
 
 app=Flask(__name__)
+
 ## Load the model
 regmodel= pickle.load(open('regmodel.pkl', 'rb'))
 scalar=pickle.load(open('scaling.pkl','rb'))
 
-app.route('/')
+@app.route('/')
 def home():
     return render_template('home.html')
 
 
-app.route('/predict_api', method=['POST'])
+#app.route('/predict_api', method=['POST'])
+@app.route('/predict_api', methods=['POST'])
 def predict_api():
     data=request.json['data']
     print(data)
