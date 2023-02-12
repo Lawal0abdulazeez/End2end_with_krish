@@ -4,5 +4,5 @@ numpy
 pandas
 matplotlib
 seaborn
-pickle
+pickle5
 gunicorn
