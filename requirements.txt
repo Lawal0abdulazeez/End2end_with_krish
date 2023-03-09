@@ -6,3 +6,4 @@ matplotlib
 seaborn
 pickle5
 gunicorn
+joblib

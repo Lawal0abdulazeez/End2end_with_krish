@@ -1,12 +1,12 @@
-import pickle  # To read our pickled model and scaler
+import joblib  # To read our pickled model and scaler
 from flask import Flask, request, jsonify, url_for, render_template  # Importing falsk framework and neccesary libraries
 import numpy as np #Importing numpy for data conversion and reshaping
 
 app=Flask(__name__, static_folder='/static')  #initializing flask
 
 ## Load the model
-regmodel= pickle.load(open('regmodel.pkl', 'rb'))  # Loading our model from the pickled model file and can now be used in our web app
-scalar=pickle.load(open('scaling.pkl','rb'))      # Loading the scaler from the pickled scaling file and can now be used in our web app
+regmodel= joblib.load(open('regmodel.h5', 'rb'))  # Loading our model from the pickled model file and can now be used in our web app
+scalar=joblib.load(open('scaling.h5','rb'))      # Loading the scaler from the pickled scaling file and can now be used in our web app
 
 @app.route('/')  # our home page
 def home():
